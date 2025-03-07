@@ -1,0 +1,49 @@
+package org.generation;
+
+import java.util.Scanner;
+
+public class piedra_papel_tijera {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		    Scanner s1 = new Scanner(System.in); //Se definió bien el constructor Scanner para el jugador 1
+		    
+		    System.out.print("Turno del jugador 1 (introduzca piedra, papel o tijeras): ");
+		    String j1 = s1.nextLine();
+		    
+		    System.out.print("Turno del jugador 2 (introduzca piedra, papel o tijeras): "); // Se cambio el # del jugador 2
+		    Scanner s2 = new Scanner(System.in); //Se definió bien el constructor Scanner para el jugador 2
+		    String j2 = s2.nextLine();
+		    
+		      //System.out.println("J1 Eligió: " +j1);
+		      //System.out.println("J2 Eligió: " +j2);
+		    
+		    if(j1.equals(j2)){  //Se eliminó parentesis de demás y se corrigio la sentencia por .equals();
+		      System.out.println("Empate");
+		    }else {
+		      int g = 2;
+		      switch(j1) {
+		        case "piedra":
+		          if (j2 == "tijeras") {
+		            g = 1;
+		          }
+
+		        case "papel":
+		          if (j2 == "piedra") {
+		            g = 1;
+		            } //Se agregó parentesis
+		          
+		        case "tijera":
+		          if (j2.equals("papel")) {
+		            g = 1;
+		          }
+		          break;
+		        default:
+		      }
+		      System.out.println("Gana el jugador " + g);
+		    }
+		      
+		    }
+	}
+
